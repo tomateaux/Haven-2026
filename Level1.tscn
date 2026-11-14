@@ -1,13 +1,13 @@
 [gd_scene format=4 uid="uid://dggpgcd6r8mr0"]
 
-[ext_resource type="Script" uid="uid://cotydwg3u1cbk" path="res://player.gd" id="1_h2yge"]
-[ext_resource type="Texture2D" uid="uid://c0w7va5o2myao" path="res://Background.png" id="1_lquwl"]
-[ext_resource type="PackedScene" uid="uid://bovgqopq6u1nt" path="res://Corpse.tscn" id="2_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://de0t1ppdy0l6o" path="res://Alive_Character.png" id="2_h2yge"]
-[ext_resource type="Texture2D" uid="uid://ranhxfen078e" path="res://ground.png" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://c0w7va5o2myao" path="res://Background.png" id="1_dn5ey"]
+[ext_resource type="Texture2D" uid="uid://ranhxfen078e" path="res://ground.png" id="2_lmyl5"]
+[ext_resource type="Script" uid="uid://cotydwg3u1cbk" path="res://player.gd" id="3_mlbie"]
+[ext_resource type="PackedScene" uid="uid://bovgqopq6u1nt" path="res://Corpse.tscn" id="4_s3sxq"]
+[ext_resource type="Texture2D" uid="uid://de0t1ppdy0l6o" path="res://Alive_Character.png" id="5_5py54"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
-texture = ExtResource("4_1bvp3")
+texture = ExtResource("2_lmyl5")
 31:16/0 = 0
 31:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 32:16/0 = 0
@@ -1483,7 +1483,7 @@ size = Vector2(191, 286.5)
 [node name="Background" type="Sprite2D" parent="." unique_id=1172685187]
 position = Vector2(0, -250)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("1_lquwl")
+texture = ExtResource("1_dn5ey")
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=268778667]
 scale = Vector2(0.5, 0.5)
@@ -1491,12 +1491,12 @@ tile_map_data = PackedByteArray("AABM/0sAAQARABIAAABM/0wAAQARABMAAABM/00AAQARABQ
 tile_set = SubResource("TileSet_coidh")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=2110423598]
-script = ExtResource("1_h2yge")
-Corpse = ExtResource("2_1bvp3")
+script = ExtResource("3_mlbie")
+Corpse = ExtResource("4_s3sxq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=2075266805]
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_h2yge")
+texture = ExtResource("5_5py54")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=2141696042]
 position = Vector2(-7.5, -3.25)
@@ -1504,3 +1504,5 @@ shape = SubResource("RectangleShape2D_coidh")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=585784229]
 zoom = Vector2(0.4, 0.4)
+
+[node name="Level1" type="Node2D" parent="." unique_id=431320529]
