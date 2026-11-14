@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://cotydwg3u1cbk" path="res://player.gd" id="3_mlbie"]
 [ext_resource type="PackedScene" uid="uid://bovgqopq6u1nt" path="res://Corpse.tscn" id="4_s3sxq"]
 [ext_resource type="Texture2D" uid="uid://de0t1ppdy0l6o" path="res://Alive_Character.png" id="5_5py54"]
+[ext_resource type="PackedScene" uid="uid://c1in0te4lgklg" path="res://Goal.tscn" id="7_mlbie"]
+[ext_resource type="Script" uid="uid://c7cu62pkn85lb" path="res://lives_container.gd" id="8_s3sxq"]
+[ext_resource type="Texture2D" uid="uid://cbbiywsuetmnc" path="res://alive_heart.png" id="9_5py54"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
 texture = ExtResource("2_lmyl5")
@@ -3031,3 +3034,59 @@ shape = SubResource("RectangleShape2D_coidh")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=585784229]
 zoom = Vector2(0.4, 0.4)
+
+[node name="Goal" parent="." unique_id=316804867 instance=ExtResource("7_mlbie")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=647592564]
+
+[node name="LivesContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=482921074]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 232.0
+offset_bottom = 78.0
+script = ExtResource("8_s3sxq")
+
+[node name="Life1" type="TextureRect" parent="CanvasLayer/LivesContainer" unique_id=956709588]
+custom_minimum_size = Vector2(40, 70)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("9_5py54")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Life2" type="TextureRect" parent="CanvasLayer/LivesContainer" unique_id=1365665217]
+custom_minimum_size = Vector2(40, 70)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("9_5py54")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Life3" type="TextureRect" parent="CanvasLayer/LivesContainer" unique_id=242817865]
+custom_minimum_size = Vector2(40, 70)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("9_5py54")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Life4" type="TextureRect" parent="CanvasLayer/LivesContainer" unique_id=504688308]
+custom_minimum_size = Vector2(40, 70)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("9_5py54")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Life5" type="TextureRect" parent="CanvasLayer/LivesContainer" unique_id=2074120956]
+custom_minimum_size = Vector2(40, 70)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("9_5py54")
+expand_mode = 1
+stretch_mode = 5

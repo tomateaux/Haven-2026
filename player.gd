@@ -3,11 +3,11 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -600.0
-
+var remaining_lives: int = 5
 
 @export var Corpse : PackedScene
 @onready var init_position: Vector2 = global_position
-
+@onready var lives_container = $"../CanvasLayer/LivesContainer"
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -34,5 +34,8 @@ func _physics_process(delta: float) -> void:
 		c.global_position = global_position
 		
 		global_position = init_position
+		
+		remaining_lives -= 1
+		lives_container.update_health(remaining_lives)
 
 	move_and_slide()
