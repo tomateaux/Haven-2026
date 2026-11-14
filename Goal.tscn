@@ -1,3 +1,16 @@
 [gd_scene format=3 uid="uid://c1in0te4lgklg"]
 
+[ext_resource type="Texture2D" uid="uid://dq3jnipxialsy" path="res://Goal_Portal.png" id="1_py4ba"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oy1yn"]
+radius = 115.0
+height = 314.0
+
 [node name="Area2D" type="Area2D" unique_id=316804867]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2088240861]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_py4ba")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2019377046]
+shape = SubResource("CapsuleShape2D_oy1yn")

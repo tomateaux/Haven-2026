@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bovgqopq6u1nt" path="res://Corpse.tscn" id="4_s3sxq"]
 [ext_resource type="Texture2D" uid="uid://de0t1ppdy0l6o" path="res://Alive_Character.png" id="5_5py54"]
 [ext_resource type="PackedScene" uid="uid://c1in0te4lgklg" path="res://Goal.tscn" id="7_mlbie"]
+[ext_resource type="Script" uid="uid://dwr856dqsfpf2" path="res://goal.gd" id="8_1bjei"]
 [ext_resource type="Script" uid="uid://c7cu62pkn85lb" path="res://lives_container.gd" id="8_s3sxq"]
 [ext_resource type="Texture2D" uid="uid://cbbiywsuetmnc" path="res://alive_heart.png" id="9_5py54"]
 
@@ -3036,6 +3037,8 @@ shape = SubResource("RectangleShape2D_coidh")
 zoom = Vector2(0.4, 0.4)
 
 [node name="Goal" parent="." unique_id=316804867 instance=ExtResource("7_mlbie")]
+position = Vector2(1126, 385)
+script = ExtResource("8_1bjei")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=647592564]
 
@@ -3090,3 +3093,5 @@ size_flags_vertical = 0
 texture = ExtResource("9_5py54")
 expand_mode = 1
 stretch_mode = 5
+
+[connection signal="body_entered" from="Goal" to="Goal" method="_on_body_entered"]
