@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://dggpgcd6r8mr0"]
 
 [ext_resource type="Script" uid="uid://cotydwg3u1cbk" path="res://player.gd" id="1_h2yge"]
-[ext_resource type="Texture2D" uid="uid://8jorwibkq2bj" path="res://icon.svg" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://de0t1ppdy0l6o" path="res://Alive_Character.png" id="2_h2yge"]
 [ext_resource type="Texture2D" uid="uid://ranhxfen078e" path="res://ground.png" id="4_1bvp3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_coidh"]
-size = Vector2(137, 137)
+size = Vector2(191, 286.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
 texture = ExtResource("4_1bvp3")
@@ -1482,10 +1482,11 @@ sources/1 = SubResource("TileSetAtlasSource_1bvp3")
 script = ExtResource("1_h2yge")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=2075266805]
-texture = ExtResource("1_ig7tw")
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_h2yge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=2141696042]
-position = Vector2(0.5, -0.5)
+position = Vector2(-7.5, -3.25)
 shape = SubResource("RectangleShape2D_coidh")
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=268778667]
