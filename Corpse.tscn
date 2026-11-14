@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bovgqopq6u1nt"]
+
+[ext_resource type="Texture2D" uid="uid://bheoqjbnxu1k8" path="res://Dead_Character.png" id="1_ryd4o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_coidh"]
+size = Vector2(883.5, 483)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=633431806]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=812377052]
+texture = ExtResource("1_ryd4o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1565418913]
+position = Vector2(5.25, -137)
+shape = SubResource("RectangleShape2D_coidh")
