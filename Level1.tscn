@@ -3031,5 +3031,3 @@ shape = SubResource("RectangleShape2D_coidh")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=585784229]
 zoom = Vector2(0.4, 0.4)
-
-[node name="Level1" type="Node2D" parent="." unique_id=431320529]
