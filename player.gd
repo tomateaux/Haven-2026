@@ -36,6 +36,12 @@ func _physics_process(delta: float) -> void:
 		global_position = init_position
 		
 		remaining_lives -= 1
+		
+		# Game over when no lives remain.
+		if remaining_lives == 0:
+			print("Game over")
+			set_physics_process(false)
+		
 		lives_container.update_health(remaining_lives)
 
 	move_and_slide()
