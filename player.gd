@@ -5,6 +5,10 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 
+@export var Corpse : PackedScene
+@onready var init_position: Vector2 = global_position
+
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -21,5 +25,14 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	# Die.
+	if Input.is_action_just_pressed("die"):
+		#print("Player died.")
+		var c = Corpse.instantiate()
+		owner.add_child(c)
+		c.global_position = global_position
+		
+		global_position = init_position
 
 	move_and_slide()
