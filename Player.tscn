@@ -101,7 +101,7 @@
 [ext_resource type="Texture2D" uid="uid://cnirswtpsxiv7" path="res://Character Sprite Walk Right/Folder 1 Copy/24.png" id="99_bda7h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_coidh"]
-size = Vector2(166.5, 286.5)
+size = Vector2(111.125, 241.25)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oy1yn"]
 animations = [{
@@ -427,6 +427,7 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_cxr5p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=924741065]
+position = Vector2(0, -22.625)
 shape = SubResource("RectangleShape2D_coidh")
 
 [node name="Outline" type="AnimatedSprite2D" parent="." unique_id=240133860]
