@@ -18,9 +18,9 @@ func die() -> void:
 	if remaining_lives == 0:
 		print("Game over")
 		set_physics_process(false)
+		$"../CanvasLayer/GameOverLabel".show()
 	
 	lives_container.update_health(remaining_lives)
-	$"../CanvasLayer/GameOverLabel".show()
 
 
 func _physics_process(delta: float) -> void:
