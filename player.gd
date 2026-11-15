@@ -10,6 +10,7 @@ var remaining_lives: int = 5
 @onready var init_position: Vector2 = global_position
 
 func die() -> void:
+	$DieSound.play(0.21)
 	global_position = init_position
 		
 	remaining_lives -= 1
@@ -31,6 +32,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		$JumpSound.play()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

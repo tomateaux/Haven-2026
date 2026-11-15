@@ -99,6 +99,8 @@
 [ext_resource type="Texture2D" uid="uid://cmvwoew3kfngs" path="res://Character Sprite Walk Right/Folder 1 Copy/22.png" id="97_v75go"]
 [ext_resource type="Texture2D" uid="uid://c5ut28yqsmo7o" path="res://Character Sprite Walk Right/Folder 1 Copy/23.png" id="98_03j1c"]
 [ext_resource type="Texture2D" uid="uid://cnirswtpsxiv7" path="res://Character Sprite Walk Right/Folder 1 Copy/24.png" id="99_bda7h"]
+[ext_resource type="AudioStream" uid="uid://bb8gwgt3c8quf" path="res://die_sound.mp3" id="100_hahtw"]
+[ext_resource type="AudioStream" uid="uid://cc4gn6pfargrc" path="res://jump_sound.mp3" id="101_2rj3r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_coidh"]
 size = Vector2(111.125, 241.25)
@@ -439,3 +441,10 @@ animation = &"walk_right"
 position = Vector2(43, 114)
 sprite_frames = SubResource("SpriteFrames_thfxg")
 animation = &"walk_right"
+
+[node name="DieSound" type="AudioStreamPlayer2D" parent="." unique_id=140846535]
+stream = ExtResource("100_hahtw")
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=935667989]
+stream = ExtResource("101_2rj3r")
+volume_db = -5.0
