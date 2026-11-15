@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://dwr856dqsfpf2" path="res://goal.gd" id="8_1bjei"]
 [ext_resource type="Script" uid="uid://c7cu62pkn85lb" path="res://lives_container.gd" id="8_s3sxq"]
 [ext_resource type="Texture2D" uid="uid://cbbiywsuetmnc" path="res://alive_heart.png" id="9_5py54"]
+[ext_resource type="FontFile" uid="uid://cyq4cfgja6au" path="res://Agrave_Pro/AgravePro-VariableFont_wght.ttf" id="10_1bjei"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
 texture = ExtResource("2_lmyl5")
@@ -3152,16 +3153,15 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -703.0
-offset_top = 5.0
-offset_right = -10.0
-offset_bottom = 150.0
+offset_top = 20.0
+offset_right = -18.0
+offset_bottom = 165.0
 grow_horizontal = 0
 theme_override_colors/font_color = Color(0.16470589, 0, 0.5176471, 1)
-theme_override_font_sizes/font_size = 24
-text = "Die to bounce back; use your past selves as stepping stones.
-← / → to Move
-Space to Jump
-E to Die"
+theme_override_fonts/font = ExtResource("10_1bjei")
+theme_override_font_sizes/font_size = 30
+text = "← → Move  |  SPACE Jump  |  E Die
+Hint: Die above the gap."
 horizontal_alignment = 2
 
 [node name="GameClearLabel" type="Label" parent="CanvasLayer" unique_id=464818051]
@@ -3177,9 +3177,10 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.32941177, 0.80784315, 0.8745098, 1)
 theme_override_colors/font_shadow_color = Color(0.16470589, 0, 0.5176471, 1)
 theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 67
-text = "GAME CLEAR; BOUNCED BACK
-R to Restart"
+theme_override_fonts/font = ExtResource("10_1bjei")
+theme_override_font_sizes/font_size = 70
+text = "LEVEL 1 BOUNCED BACK
+Enter to Continue"
 horizontal_alignment = 1
 
 [node name="GameOverLabel" type="Label" parent="CanvasLayer" unique_id=1766678001]
@@ -3195,7 +3196,8 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.84705883, 0.56078434, 0.91764706, 1)
 theme_override_colors/font_shadow_color = Color(0.7294118, 0.3254902, 0.63529414, 1)
 theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 67
+theme_override_fonts/font = ExtResource("10_1bjei")
+theme_override_font_sizes/font_size = 70
 text = "GAME OVER
 R to Retry"
 horizontal_alignment = 1
