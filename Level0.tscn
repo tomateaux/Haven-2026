@@ -1,18 +1,18 @@
 [gd_scene format=4 uid="uid://dggpgcd6r8mr0"]
 
-[ext_resource type="Texture2D" uid="uid://c0w7va5o2myao" path="res://Background.png" id="1_dn5ey"]
-[ext_resource type="Texture2D" uid="uid://ranhxfen078e" path="res://ground.png" id="2_lmyl5"]
-[ext_resource type="Texture2D" uid="uid://bouuqs5ipu1cq" path="res://Ground2.png" id="3_lmyl5"]
-[ext_resource type="Script" uid="uid://cotydwg3u1cbk" path="res://player.gd" id="3_mlbie"]
-[ext_resource type="PackedScene" uid="uid://bovgqopq6u1nt" path="res://Corpse.tscn" id="4_s3sxq"]
-[ext_resource type="Texture2D" uid="uid://de0t1ppdy0l6o" path="res://Alive_Character.png" id="5_5py54"]
-[ext_resource type="PackedScene" uid="uid://c1in0te4lgklg" path="res://Goal.tscn" id="7_mlbie"]
-[ext_resource type="Script" uid="uid://dwr856dqsfpf2" path="res://goal.gd" id="8_1bjei"]
-[ext_resource type="Script" uid="uid://c7cu62pkn85lb" path="res://lives_container.gd" id="8_s3sxq"]
-[ext_resource type="Texture2D" uid="uid://cbbiywsuetmnc" path="res://alive_heart.png" id="9_5py54"]
+[ext_resource type="Texture2D" uid="uid://c0w7va5o2myao" path="res://Background.png" id="1_jooga"]
+[ext_resource type="Texture2D" uid="uid://ranhxfen078e" path="res://ground.png" id="2_b5pna"]
+[ext_resource type="Texture2D" uid="uid://bouuqs5ipu1cq" path="res://Ground2.png" id="3_e6c3w"]
+[ext_resource type="Script" uid="uid://cotydwg3u1cbk" path="res://player.gd" id="4_nwh7g"]
+[ext_resource type="PackedScene" uid="uid://bovgqopq6u1nt" path="res://Corpse.tscn" id="5_2o5vc"]
+[ext_resource type="Texture2D" uid="uid://de0t1ppdy0l6o" path="res://Alive_Character.png" id="6_gjdut"]
+[ext_resource type="PackedScene" uid="uid://c1in0te4lgklg" path="res://Goal.tscn" id="7_l8jcf"]
+[ext_resource type="Script" uid="uid://dwr856dqsfpf2" path="res://goal.gd" id="8_o6eak"]
+[ext_resource type="Script" uid="uid://c7cu62pkn85lb" path="res://lives_container.gd" id="9_ewhlb"]
+[ext_resource type="Texture2D" uid="uid://cbbiywsuetmnc" path="res://alive_heart.png" id="10_mxksj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
-texture = ExtResource("2_lmyl5")
+texture = ExtResource("2_b5pna")
 31:16/0 = 0
 31:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 32:16/0 = 0
@@ -1604,7 +1604,7 @@ texture = ExtResource("2_lmyl5")
 44:46/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mlbie"]
-texture = ExtResource("3_lmyl5")
+texture = ExtResource("3_e6c3w")
 34:16/0 = 0
 34:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 35:16/0 = 0
@@ -3014,7 +3014,7 @@ size = Vector2(191, 286.5)
 [node name="Background" type="Sprite2D" parent="." unique_id=1172685187]
 position = Vector2(0, -200)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("1_dn5ey")
+texture = ExtResource("1_jooga")
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=268778667]
 scale = Vector2(0.5, 0.5)
@@ -3022,12 +3022,12 @@ tile_map_data = PackedByteArray("AABM/0sAAgAUABIAAABM/0wAAgAUABMAAABM/00AAgAUABQ
 tile_set = SubResource("TileSet_coidh")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=2110423598]
-script = ExtResource("3_mlbie")
-Corpse = ExtResource("4_s3sxq")
+script = ExtResource("4_nwh7g")
+Corpse = ExtResource("5_2o5vc")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=2075266805]
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("5_5py54")
+texture = ExtResource("6_gjdut")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=2141696042]
 position = Vector2(-7.5, -3.25)
@@ -3036,9 +3036,9 @@ shape = SubResource("RectangleShape2D_coidh")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=585784229]
 zoom = Vector2(0.4, 0.4)
 
-[node name="Goal" parent="." unique_id=316804867 instance=ExtResource("7_mlbie")]
+[node name="Goal" parent="." unique_id=316804867 instance=ExtResource("7_l8jcf")]
 position = Vector2(1126, 385)
-script = ExtResource("8_1bjei")
+script = ExtResource("8_o6eak")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=647592564]
 
@@ -3047,14 +3047,14 @@ offset_left = 16.0
 offset_top = 16.0
 offset_right = 232.0
 offset_bottom = 78.0
-script = ExtResource("8_s3sxq")
+script = ExtResource("9_ewhlb")
 
 [node name="Life1" type="TextureRect" parent="CanvasLayer/LivesContainer" unique_id=956709588]
 custom_minimum_size = Vector2(40, 70)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("9_5py54")
+texture = ExtResource("10_mxksj")
 expand_mode = 1
 stretch_mode = 5
 
@@ -3063,7 +3063,7 @@ custom_minimum_size = Vector2(40, 70)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("9_5py54")
+texture = ExtResource("10_mxksj")
 expand_mode = 1
 stretch_mode = 5
 
@@ -3072,7 +3072,7 @@ custom_minimum_size = Vector2(40, 70)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("9_5py54")
+texture = ExtResource("10_mxksj")
 expand_mode = 1
 stretch_mode = 5
 
@@ -3081,7 +3081,7 @@ custom_minimum_size = Vector2(40, 70)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("9_5py54")
+texture = ExtResource("10_mxksj")
 expand_mode = 1
 stretch_mode = 5
 
@@ -3090,7 +3090,7 @@ custom_minimum_size = Vector2(40, 70)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("9_5py54")
+texture = ExtResource("10_mxksj")
 expand_mode = 1
 stretch_mode = 5
 
