@@ -22,7 +22,6 @@ BGM="*uid://dabntqb6b1stu"
 [display]
 
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [input]
 
