@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://defxfks843yw5"]
 
+[ext_resource type="Script" uid="uid://dwaeql03gxfnn" path="res://level_2.gd" id="1_46pvi"]
 [ext_resource type="Texture2D" uid="uid://c0w7va5o2myao" path="res://Background.png" id="1_3453u"]
 [ext_resource type="Texture2D" uid="uid://ranhxfen078e" path="res://ground.png" id="2_46pvi"]
 [ext_resource type="Texture2D" uid="uid://bouuqs5ipu1cq" path="res://Ground2.png" id="3_fvkd4"]
@@ -3010,6 +3011,7 @@ sources/2 = SubResource("TileSetAtlasSource_mlbie")
 size = Vector2(191, 286.5)
 
 [node name="Node" type="Node" unique_id=2003845105]
+script = ExtResource("1_46pvi")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1172685187]
 position = Vector2(6.9999995, -52.000015)
