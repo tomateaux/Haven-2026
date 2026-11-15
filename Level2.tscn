@@ -3022,6 +3022,7 @@ tile_map_data = PackedByteArray("AABM/0sAAgAUABIAAABM/0wAAgAUABMAAABM/00AAgAUABQ
 tile_set = SubResource("TileSet_coidh")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=2110423598]
+position = Vector2(-1250, -150)
 script = ExtResource("4_pj4lr")
 Corpse = ExtResource("5_00xh1")
 
@@ -3030,7 +3031,6 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_8tfmj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=2141696042]
-position = Vector2(-7.5, -3.25)
 shape = SubResource("RectangleShape2D_coidh")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=585784229]
