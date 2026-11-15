@@ -6,8 +6,8 @@ const JUMP_VELOCITY = -600.0
 var remaining_lives: int = 5
 
 @export var Corpse : PackedScene
+@export var lives_container : HBoxContainer
 @onready var init_position: Vector2 = global_position
-@onready var lives_container = $"../CanvasLayer/LivesContainer"
 
 func die() -> void:
 	global_position = init_position
