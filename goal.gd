@@ -14,6 +14,15 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		print("Game clear")
-		$GoalSound.play()
+		
 		$"../Player".set_physics_process(false)
+		
+		BGM.volume_db -= 20
+		$GoalSound.play()
+		
+		await get_tree().create_timer(0.3).timeout
+		for i in range(10):
+			await get_tree().create_timer(0.1).timeout
+			BGM.volume_db += 2.0
+		
 		$"../CanvasLayer/GameClearLabel".show()

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dabntqb6b1stu"]
+
+[ext_resource type="AudioStream" uid="uid://cxi4uis021n8r" path="res://BOUNCE_CARVEN.wav" id="1_f8x3a"]
+
+[node name="BGM" type="AudioStreamPlayer2D" unique_id=32502203]
+stream = ExtResource("1_f8x3a")
+autoplay = true
