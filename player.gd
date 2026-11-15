@@ -40,6 +40,17 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
+	# Animation
+	if Input.is_action_pressed("ui_left"):
+		$Fill.play("walk_left")
+		$Outline.play("walk_left")
+	elif Input.is_action_pressed("ui_right"):
+		$Fill.play("walk_right")
+		$Outline.play("walk_right")
+	else:
+		$Fill.stop()
+		$Outline.stop()
+	
 	# Die.
 	if Input.is_action_just_pressed("die"):
 		#print("Player died.")
