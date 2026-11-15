@@ -10,6 +10,7 @@ var is_dead: bool = false
 @export var lives_container : HBoxContainer
 @onready var init_position: Vector2 = global_position
 
+
 func _ready() -> void:
 	$SpawnSound.play()
 
@@ -47,6 +48,7 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
+		#$WalkSound.play()
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
@@ -74,6 +76,10 @@ func _physics_process(delta: float) -> void:
 		die()
 		await get_tree().create_timer(0.5).timeout
 		is_dead = false
-		
+	
+	var was_on_floor := is_on_floor()
 
 	move_and_slide()
+
+	if not was_on_floor and is_on_floor():
+		$FallSound.play(0.58)

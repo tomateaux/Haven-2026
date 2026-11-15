@@ -102,6 +102,8 @@
 [ext_resource type="AudioStream" uid="uid://bb8gwgt3c8quf" path="res://die_sound.mp3" id="100_hahtw"]
 [ext_resource type="AudioStream" uid="uid://cc4gn6pfargrc" path="res://jump_sound.mp3" id="101_2rj3r"]
 [ext_resource type="AudioStream" uid="uid://yvlwc4g0pnfp" path="res://spawn_sound.mp3" id="102_bhn42"]
+[ext_resource type="AudioStream" uid="uid://c276g0htygjqw" path="res://walk_sound.mp3" id="103_3pg1k"]
+[ext_resource type="AudioStream" uid="uid://b3dsxp5617m0u" path="res://fall_sound.mp3" id="104_mve4y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_coidh"]
 size = Vector2(111.125, 241.25)
@@ -452,3 +454,9 @@ volume_db = -5.0
 
 [node name="SpawnSound" type="AudioStreamPlayer2D" parent="." unique_id=121998089]
 stream = ExtResource("102_bhn42")
+
+[node name="WalkSound" type="AudioStreamPlayer2D" parent="." unique_id=1627786847]
+stream = ExtResource("103_3pg1k")
+
+[node name="FallSound" type="AudioStreamPlayer2D" parent="." unique_id=2073789397]
+stream = ExtResource("104_mve4y")
