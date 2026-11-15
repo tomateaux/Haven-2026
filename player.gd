@@ -4,24 +4,32 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -600.0
 var remaining_lives: int = 5
+var is_dead: bool = false
 
 @export var Corpse : PackedScene
 @export var lives_container : HBoxContainer
 @onready var init_position: Vector2 = global_position
 
+func _ready() -> void:
+	$SpawnSound.play()
+
+
 func die() -> void:
 	$DieSound.play(0.21)
-	global_position = init_position
-		
 	remaining_lives -= 1
+	lives_container.update_health(remaining_lives)
+	hide()
 	
-	# Game over when no lives remain.
+	# Game over when no lives remain, otherwise respawn.
 	if remaining_lives == 0:
 		print("Game over")
 		set_physics_process(false)
 		$"../CanvasLayer/GameOverLabel".show()
-	
-	lives_container.update_health(remaining_lives)
+	else:
+		await get_tree().create_timer(0.4).timeout
+		global_position = init_position
+		show()
+		$SpawnSound.play()
 
 
 func _physics_process(delta: float) -> void:
@@ -61,8 +69,11 @@ func _physics_process(delta: float) -> void:
 		c.global_position = global_position
 		die()
 	
-	if global_position.y > 1000:
+	if global_position.y > 1000 and not is_dead:
+		is_dead = true
 		die()
+		await get_tree().create_timer(0.5).timeout
+		is_dead = false
 		
 
 	move_and_slide()
