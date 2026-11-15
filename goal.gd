@@ -15,3 +15,4 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		print("Game clear")
 		$"../Player".set_physics_process(false)
+		$"../CanvasLayer/GameClearLabel".show()

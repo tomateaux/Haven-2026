@@ -20,6 +20,7 @@ func die() -> void:
 		set_physics_process(false)
 	
 	lives_container.update_health(remaining_lives)
+	$"../CanvasLayer/GameOverLabel".show()
 
 
 func _physics_process(delta: float) -> void:
