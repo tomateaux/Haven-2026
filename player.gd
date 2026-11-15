@@ -9,6 +9,19 @@ var remaining_lives: int = 5
 @onready var init_position: Vector2 = global_position
 @onready var lives_container = $"../CanvasLayer/LivesContainer"
 
+func die() -> void:
+	global_position = init_position
+		
+	remaining_lives -= 1
+	
+	# Game over when no lives remain.
+	if remaining_lives == 0:
+		print("Game over")
+		set_physics_process(false)
+	
+	lives_container.update_health(remaining_lives)
+
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -32,16 +45,10 @@ func _physics_process(delta: float) -> void:
 		var c = Corpse.instantiate()
 		owner.add_child(c)
 		c.global_position = global_position
+		die()
+	
+	if global_position.y > 1000:
+		die()
 		
-		global_position = init_position
-		
-		remaining_lives -= 1
-		
-		# Game over when no lives remain.
-		if remaining_lives == 0:
-			print("Game over")
-			set_physics_process(false)
-		
-		lives_container.update_health(remaining_lives)
 
 	move_and_slide()
